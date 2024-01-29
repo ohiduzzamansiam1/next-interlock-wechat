@@ -1,5 +1,6 @@
 import AuthSessionProvider from "@/components/providers/AuthSessionProvider";
 import { authOptions } from "@/helpers/nextAuthHandler";
+import { cn } from "@/lib/utils";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 import { getServerSession } from "next-auth";
@@ -21,7 +22,7 @@ export default async function RootLayout({
   const session = await getServerSession(authOptions);
   return (
     <html lang="en">
-      <body className={GeistSans.className}>
+      <body className={cn(GeistSans.className)}>
         <AuthSessionProvider session={session!}>{children}</AuthSessionProvider>
       </body>
     </html>

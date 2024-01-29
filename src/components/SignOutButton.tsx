@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 
 export default function SignOutButton() {
   const { data } = useSession();
@@ -40,6 +41,7 @@ export default function SignOutButton() {
           <AlertDialogAction
             onClick={async () => {
               await signOut();
+              redirect("/");
             }}
           >
             Continue

@@ -1,7 +1,7 @@
 "use client";
 
 import { db } from "@/firebase/firebase";
-import { doc, serverTimestamp, setDoc } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
 import { Send } from "lucide-react";
 import { useSession } from "next-auth/react";
 import { FormEvent, useState } from "react";
@@ -33,7 +33,7 @@ function ChatForm({ receiverEmail }: { receiverEmail: string }) {
       },
       message: text,
       isRead: false,
-      timestamp: serverTimestamp(),
+      timestamp: Date.now().toString(),
     });
   };
   return (
