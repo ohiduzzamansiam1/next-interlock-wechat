@@ -20,9 +20,7 @@ function LoginPage() {
               <h1 className="text-xl font-semibold text-neutral-700">
                 Sign in
               </h1>
-              <p className="text-sm text-neutral-600">
-                Sign to continue WeChat
-              </p>
+              <p className="text-sm text-neutral-600">Sign to continue</p>
               <Button
                 className="flex items-center gap-2 my-5"
                 onClick={async () => {
